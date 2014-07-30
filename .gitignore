@@ -1,0 +1,9 @@
+/Plack-Middleware-LogDispatchouli-*
+/.build
+/Makefile
+/Makefile.old
+/blib
+MYMETA.*
+!META.json
+/.prove
+/pm_to_blib
