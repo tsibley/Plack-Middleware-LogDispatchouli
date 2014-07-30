@@ -10,7 +10,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Blah blah blah",
+  "ABSTRACT" => "Uses Log::Dispatchouli to configure the PSGI logger",
   "AUTHOR" => "Thomas Sibley <trsibley\@uw.edu>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
@@ -19,8 +19,18 @@ my %WriteMakefileArgs = (
   "EXE_FILES" => [],
   "LICENSE" => "perl",
   "NAME" => "Plack::Middleware::LogDispatchouli",
-  "PREREQ_PM" => {},
+  "PREREQ_PM" => {
+    "Carp" => 0,
+    "Log::Dispatchouli" => "1.008",
+    "Plack::Middleware" => 0,
+    "Plack::Util::Accessor" => 0,
+    "Scalar::Util" => 0
+  },
   "TEST_REQUIRES" => {
+    "HTTP::Request::Common" => 0,
+    "Log::Dispatch::Array" => 0,
+    "Plack::Test" => 0,
+    "Test::Deep" => 0,
     "Test::More" => "0.96"
   },
   "VERSION" => "0.01",
@@ -31,6 +41,15 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
+  "Carp" => 0,
+  "HTTP::Request::Common" => 0,
+  "Log::Dispatch::Array" => 0,
+  "Log::Dispatchouli" => "1.008",
+  "Plack::Middleware" => 0,
+  "Plack::Test" => 0,
+  "Plack::Util::Accessor" => 0,
+  "Scalar::Util" => 0,
+  "Test::Deep" => 0,
   "Test::More" => "0.96"
 );
 

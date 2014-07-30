@@ -1,5 +1,5 @@
 {
-   "abstract" : "Blah blah blah",
+   "abstract" : "Uses Log::Dispatchouli to configure the PSGI logger",
    "author" : [
       "Thomas Sibley <trsibley@uw.edu>"
    ],
@@ -36,11 +36,20 @@
       },
       "runtime" : {
          "requires" : {
+            "Carp" : "0",
+            "Log::Dispatchouli" : "1.008",
+            "Plack::Middleware" : "0",
+            "Plack::Util::Accessor" : "0",
+            "Scalar::Util" : "0",
             "perl" : "5.008005"
          }
       },
       "test" : {
          "requires" : {
+            "HTTP::Request::Common" : "0",
+            "Log::Dispatch::Array" : "0",
+            "Plack::Test" : "0",
+            "Test::Deep" : "0",
             "Test::More" : "0.96"
          }
       }
